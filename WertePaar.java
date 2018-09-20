@@ -39,6 +39,19 @@ public class WertePaar
         wertB = newWert;
     }
     /**
+     * Prüfung auf gerade oder ungerade Zahl
+     */
+    public boolean isAeven(){
+        
+        return isEven(wertA);
+        
+    }
+    public boolean isBeven(){
+        
+        return isEven(wertB);
+        
+    }
+    /**
      * Summen-Methode
      */
     public int getAplusB()
@@ -123,6 +136,13 @@ public class WertePaar
         }
         return retVal;
     }
+    private boolean isEven(int tstVal){
+        if (tstVal % 2 == 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
     private double potenz(int a, int b){
         double retVal=(double)a;
         for (int i=1; i < b; i++){
@@ -138,8 +158,8 @@ public class WertePaar
     {
         System.out.println("Information über das Objekt " + this.toString());
         System.out.println("-----------------------------------------------------------");
-        System.out.println(" Wert A: " + wertA);
-        System.out.println(" Wert B: " + wertB);
+        System.out.println(" Wert A: " + wertA + " - gerade Zahl?: " + isAeven());
+        System.out.println(" Wert B: " + wertB + " - gerade Zahl?: " + isBeven());
         System.out.println("  A + B: " + getAplusB());
         System.out.println("  A - B: " + getAminusB());
         System.out.println("  B - A: " + getBminusA());
